@@ -1,0 +1,92 @@
+.navigation {
+  position: absolute;
+  z-index: 100;
+  background-color: rgba($color-black, .45);
+  width: 100%;
+  height: calculateRem(75);
+
+  &__branding {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: calculateRem(30);
+    margin-right: calculateRem(15);
+
+    img {
+      width: inherit;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include breakpoint(desk) {
+      display: block;
+
+      &:link,
+      &:visited {
+        color: $color-white;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: calculateRem(18);
+      }
+    }
+  }
+
+  &__account {
+    @include flex(0, center, center);
+  }
+
+  &__nav{
+    @include flex(0, flex-end, center);
+  }
+
+  &__list {
+    display: none;
+
+    @include breakpoint(desk) {
+      overflow: visible;
+      display: block;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    float: left;
+    margin: 0 calculateRem(18);
+    overflow: visible;
+
+    @include clearfix;
+
+    a {
+      &:link,
+      &:visited {
+        color: $color-white-light;
+        text-transform: uppercase;
+        font-size: calculateRem(16);
+        font-weight: 600;
+        padding: 0 calculateRem(10);
+        position: relative;
+        transition: color .3s;
+
+        &::after {
+          @include underline(-7, 0, 50%);
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        }
+
+        &.is-active {
+          &::after {
+            @include underline(-7, 50%, 25%);
+          }
+        }
+      }
+
+      &:hover::after {
+        width: 50%;
+        left: 25%;
+      }
+    }
+  }
+}

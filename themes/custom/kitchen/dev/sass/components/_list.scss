@@ -1,0 +1,63 @@
+.list {
+  margin: calculateRem(60) calculateRem(30);
+
+  &__image {
+    text-align: center;
+
+    a {
+
+      img {
+        width: 50%;
+        border-radius: 50%;
+
+        @include breakpoint(tab-land) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__group {
+    text-align: center;
+    margin-top: calculateRem(20);
+
+    @include breakpoint(tab-land) {
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+
+  &__content {
+    width: 70%;
+    padding-left: calculateRem(20);
+    display: inline-block;
+    float: right;
+    @include clearfix;
+  }
+
+  &__title {
+    color: $color-dark-text;
+    font-size: calculateRem(14);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: calculateRem(20);
+    word-wrap: break-word;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__text {
+    color: $color-regular-text;
+    line-height: 1.5;
+    margin: calculateRem(15) 0;
+  }
+
+  &__date {
+    color: $color-regular-text;
+    font-weight: bold;
+    font-size: calculateRem(14);
+  }
+
+}

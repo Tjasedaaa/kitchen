@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Kitchen theme.
+ */
+
+ use Drupal\Core\Form\FormStateInterface;
+ use \Drupal\block_content\BlockContentInterface;
+
+ /**
+ * Removes width and height attributes from all img tags
+ **/
+
+ function kitchen_preprocess_image(&$variables) {
+   if (isset($variables['attributes']['width']) && isset($variables['attributes']['height'])) {
+     unset($variables['attributes']['width']);
+     unset($variables['attributes']['height']);
+   }
+ }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+
+function kitchen_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content']) && $variables['elements']['content']['#block_content'] instanceof BlockContentInterface) {
+    array_splice($suggestions, 1, 0, 'block__block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements hook_form_alter
+ */
+function kitchen_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  add_placeholders($form);
+}
+
+/**
+ * Add placeholders to suitable form elements -> textfield, password, email, textarea
+ */
+function add_placeholders(&$element) {
+  if(isset($element['#type']) && in_array($element['#type'], ['textfield', 'email'])) {
+    $element['#attributes']['placeholder'] = $element['#title'];
+  }
+  foreach(\Drupal\Core\Render\Element::children($element) as $key) {
+    add_placeholders($element[$key]);
+  }
+}
+
+function kitchen_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $suggestions[] = 'field__' .
+    $variables['element']['#field_name'] . '__' .
+    $variables['element']['#bundle'] . '__' .
+    $variables['element']['#view_mode'];
+}

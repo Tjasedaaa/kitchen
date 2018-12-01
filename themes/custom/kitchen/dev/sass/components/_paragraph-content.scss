@@ -1,0 +1,27 @@
+.paragraph-content {
+
+  &__content {
+    figure{
+      padding: calculateRem(15) calculateRem(35);
+
+      &.align-left {
+        padding-left: 0;
+      }
+
+      &.align-right {
+        padding-right: 0;
+      }
+
+      figcaption {
+        font-size: calculateRem(14);
+        font-style: italic;
+        padding-top: 5px;
+
+        a {
+          color: $color-gray-dark;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

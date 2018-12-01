@@ -1,0 +1,91 @@
+.heading-primary {
+  font-family: $font-heading;
+  font-size: calculateRem(90);
+  font-weight: 200;
+  color: $color-white-light;
+  backface-visibility: hidden;
+
+  @include breakpoint(tab-port) {
+    font-size: calculateRem(110);
+  }
+
+  @include breakpoint(tab-land) {
+    font-size: calculateRem(120);
+  }
+
+  @include breakpoint(desk) {
+    font-size: calculateRem(130);
+  }
+}
+
+.heading-secondary {
+  font-family: $font-heading;
+  font-size: calculateRem(50);
+  font-weight: 300;
+  color: $color-dark-text;
+
+  @include breakpoint(tab-port) {
+    font-size: calculateRem(60);
+  }
+}
+
+.heading-tertiary {
+  font-family: $font-main;
+  color: $color-gray-dark;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: calculateRem(22);
+}
+
+.heading-text {
+  font-family: $font-main;
+  font-size: calculateRem(18);
+  color: $color-dark-text;
+  font-weight: bold;
+
+  a {
+    color: inherit;
+  }
+}
+
+.title {
+  color: $color-dark-text;
+  font-weight: bold;
+  font-size: calculateRem(16);
+  word-break: break-word;
+
+  a {
+    color: inherit;
+  }
+
+  &--big {
+    text-transform: uppercase;
+  }
+}
+
+.subtitle {
+  color: $color-regular-text;
+  font-size: calculateRem(18);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.subheading {
+  font-family: $font-main;
+  color: $color-white-light;
+  font-size: calculateRem(18);
+  max-width: calculateRem(700);
+  line-height: 1.6;
+}
+
+.text {
+  font-family: $font-main;
+  font-size: calculateRem(16);
+  color: $color-regular-text;
+}
+
+.text-signature {
+  font-family: 'Allura', cursive;
+  font-size: 25px;
+  color: #898989;
+}

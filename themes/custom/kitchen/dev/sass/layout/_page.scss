@@ -1,0 +1,28 @@
+.section {
+  padding: calculateRem(100) 0;
+
+  @include breakpoint(tab-land) {
+    padding: calculateRem(150) 0;
+  }
+
+  @include breakpoint(desk) {
+    padding: calculateRem(200) 0;
+  }
+
+  &--medium {
+    padding: calculateRem(100) 0;
+
+    @include breakpoint(tab-land) {
+      padding: calculateRem(160) 0;
+    }
+  }
+}
+
+/* Implements margin for infinite scroll container (recepie page) */
+.views-infinite-scroll-content-wrapper {
+  margin: calculateRem(100) 0 calculateRem(150) 0;
+}
+
+.layout-content {
+  padding: 0;
+}

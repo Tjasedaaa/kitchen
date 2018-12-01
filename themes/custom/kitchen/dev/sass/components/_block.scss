@@ -1,0 +1,41 @@
+.block {
+  &__outer {
+    width: 100%;
+    background-color: rgba($color-black, .1);
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint(tab-port) {
+      padding: calculateRem(50) calculateRem(60);
+    }
+
+    @include breakpoint(tab-land) {
+      width: 90%;
+      padding: calculateRem(80) calculateRem(100);
+    }
+
+    @include breakpoint(desk) {
+      width: 80%;
+      padding: calculateRem(80) calculateRem(100);
+    }
+  }
+
+  &__inner {
+    background-color: rgba($color-white-light, .8);
+    padding: calculateRem(96) calculateRem(25);
+    border-radius: 4px;
+
+    @include breakpoint(tab-port) {
+      padding: calculateRem(96) calculateRem(40);
+    }
+
+    @include breakpoint(tab-land) {
+      padding: calculateRem(96) calculateRem(80);
+    }
+  }
+
+  &__title, &__button {
+    text-align: center;
+  }
+}

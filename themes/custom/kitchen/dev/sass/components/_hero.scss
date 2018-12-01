@@ -1,0 +1,46 @@
+.hero {
+  overflow: hidden;
+  position: relative;
+
+  &--front {
+    height: 500px;
+    @include overlay(500px, calculateRem(500), $color-black, .4);
+
+    @include breakpoint(tab-port) {
+      height: 85vh;
+      min-height: calculateRem(480);
+      max-height: calculateRem(600);
+      @include overlay(85vh, calculateRem(480), $color-black, .4);
+    }
+
+    @include breakpoint(tab-land) {
+      max-height: 85vh;
+    }
+  }
+
+  &--page {
+    height: 40vh;
+    min-height: calculateRem(280);
+    @include overlay(40vh, calculateRem(280), $color-black, .4);
+
+    @include breakpoint(tab-port) {
+      height: 45vh;
+      min-height: calculateRem(280);
+      @include overlay(45vh, calculateRem(280), $color-black, .4);
+    }
+  }
+
+  &__content {
+    text-align: center;
+    backface-visibility: hidden;
+
+    &--front {
+      width: 85%;
+      @include absoluteCenter(-50%, -50%);
+    }
+
+    &--page {
+      @include absoluteCenter(-50%, -30%);
+    }
+  }
+}

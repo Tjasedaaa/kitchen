@@ -1,0 +1,70 @@
+.recipe {
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    color: $color-dark-text;
+    text-transform: uppercase;
+  }
+
+  &__main {
+    border-bottom: .5px solid $color-gray-light;
+  }
+
+  &__info {
+    border-top: .5px solid $color-gray-light;
+    border-bottom: .5px solid $color-gray-light;
+  }
+
+  &__info-item {
+    color: $color-regular-text;
+    font-size: calculateRem(14);
+  }
+
+  &__ingrediant {
+    margin: 25px 0;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  &__note {
+    margin: 20px 0;
+    font-style: italic;
+  }
+
+  &__step {
+    margin: calculateRem(25) 0;
+  }
+
+  &__step-count, &__step-step {
+    display: inline-block;
+  }
+
+  &__step-count {
+    width: calculateRem(35);
+    font-size: calculateRem(35);
+    font-weight: 600;
+    color: $color-gray-light;
+    vertical-align: middle;
+
+    @include breakpoint(desk) {
+      width: calculateRem(45);
+    }
+  }
+
+  &__step-step {
+    width: 85%;
+    vertical-align: middle;
+
+    @include breakpoint(desk) {
+      width: 90%;
+    }
+  }
+}

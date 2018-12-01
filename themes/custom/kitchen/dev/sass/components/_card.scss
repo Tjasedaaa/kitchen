@@ -1,0 +1,83 @@
+.card {
+  background-color: $color-white;
+  border-radius: 4px;
+  box-shadow: 0 calculateRem(10) calculateRem(40) rgba($color-black, .2);
+  height: 100%;
+  overflow: hidden;
+  transition: all .3s ease-out;
+  filter: blur(0);
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+
+  @include breakpoint(tab-port) {
+    width: 100%;
+  }
+
+  &--small {
+    margin: calculateRem(30) 0;
+  }
+
+  &:hover {
+    transform: perspective(1px) translateY(calculateRem(-7));
+    transform-origin: 0 100%;
+  }
+
+  &-body {
+    padding: 15px;
+  }
+
+  &__image {
+    width: 100%;
+
+    a {
+      width: 100%;
+
+      img {
+        width: inherit;
+      }
+    }
+  }
+
+  &__categories {
+    margin-bottom: calculateRem(15);
+  }
+
+  &__category {
+    font-size: calculateRem(12);
+    color: $color-secondary;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &:not(:last-child)::after {
+      content: ',';
+    }
+  }
+
+  &__text {
+    color: $color-regular-text;
+    font-size: calculateRem(15);
+    margin: calculateRem(15) 0;
+  }
+
+  &__text--small {
+    color: $color-regular-text;
+    font-size: calculateRem(14);
+    margin: calculateRem(10) 0;
+  }
+
+  &__info {
+    padding: calculateRem(15);
+  }
+
+  &__time {
+    color: $color-regular-text;
+    font-size: calculateRem(12);
+    font-weight: 600;
+  }
+
+  &__difficulty {
+    float: right;
+  }
+}

@@ -1,0 +1,8 @@
+.sidebar {
+  display: none;
+
+  @include breakpoint(tab-land) {
+    display: block;
+    background-color: $color-white-light;
+  }
+}

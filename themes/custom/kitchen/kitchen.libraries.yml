@@ -1,0 +1,17 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/grid.css: {}
+      css/style.css: {}
+
+global-scripts:
+  version: 1.x
+  js:
+    js/app.min.js: {}
+
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Allura': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Open+Sans:400,600,700': { type: external, minified: true }

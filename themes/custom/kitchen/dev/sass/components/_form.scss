@@ -1,0 +1,239 @@
+/* MAILCHIMP FORM SPECIFIC*/
+
+.mailchimp-signup-subscribe-form {
+  width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint(desk) {
+    width: 80%;
+  }
+
+  @include breakpoint(desk-big) {
+    width: 60%;
+  }
+}
+
+.mailchimp-newsletter-mergefields {
+  margin-bottom: 2rem;
+}
+
+/* FILTER FORM SPECIFIC*/
+
+#views-exposed-form-recepti-page-1, #views-exposed-form-blog-page-1 {
+  background-color: $color-primary;
+  color: $color-white-light;
+  padding: calculateRem(15) calculateRem(20);
+
+  @include breakpoint(tab-port) {
+    padding: calculateRem(15) calculateRem(50);
+  }
+
+  @include breakpoint(tab-land) {
+    padding: calculateRem(20) calculateRem(60);
+    vertical-align: sub;
+  }
+
+  @include breakpoint(large) {
+    padding: calculateRem(20) calculateRem(80);
+  }
+}
+
+#views-exposed-form-recepti-page-1 {
+  fieldset {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+
+    @include breakpoint(tab-port) {
+      width: 70%;
+    }
+
+    @include breakpoint(desk) {
+      width: 65%;
+    }
+
+    @include breakpoint(desk-big) {
+      vertical-align: sub;
+    }
+
+    &:last-of-type {
+      text-align: right;
+      width: 48%;
+
+      @include breakpoint(tab-port) {
+        width: 28%;
+      }
+
+      @include breakpoint(desk) {
+        width: 34%;
+      }
+    }
+  }
+}
+
+#views-exposed-form-blog-page-1 {
+  text-align: center;
+
+  fieldset {
+    display: inline-block;
+
+    .form__legend, .form__fieldset-wrapper {
+      display: inline-block;
+    }
+
+    .form__legend {
+      vertical-align: -webkit-baseline-middle;
+    }
+
+    .form__check-group {
+      display: inline-block;
+      padding: calculateRem(5) calculateRem(10);
+    }
+  }
+}
+
+/* FORM SPECIFIC*/
+
+.form {
+  &__group {
+    width: 100%;
+    margin: 0 auto;
+
+    @include breakpoint(tab-land) {
+      width: 90%;
+    }
+
+    @include breakpoint(desk-big) {
+      width: 70%;
+    }
+  }
+
+  &__check-group {
+    padding: calculateRem(5) 0;
+    text-align: left;
+
+    @include breakpoint(tab-land) {
+      display: inline-block;
+      padding: calculateRem(5) calculateRem(10);
+    }
+
+    @include breakpoint(desk) {
+      vertical-align: super;
+    }
+
+    @include breakpoint(desk-big) {
+      display: inline-block;
+      padding: 0 calculateRem(20);
+      vertical-align: unset;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__check-label {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: calculateRem(10);
+    font-size: calculateRem(17);
+  }
+
+  &__checkbox-input {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    display: none;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: calculateRem(15);
+    color: inherit;
+    height: calculateRem(50);
+    width: 100%;
+    border: .25px solid #cccccc;
+    border-radius: 4px;
+    background-color: rgba($color-white, .9);
+    padding: calculateRem(15) calculateRem(20);
+    margin-bottom: calculateRem(20);
+    border-bottom: 3px solid transparent;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-regular-text;
+    }
+  }
+
+  &__legend, &__fieldset-wrapper {
+    @include breakpoint(desk) {
+      display: inline-block;
+    }
+  }
+
+  &__fieldset-wrapper {
+    @include breakpoint(tab-land) {
+      text-align: left;
+    }
+  }
+
+  &__legend {
+    margin-right: calculateRem(20);
+    margin-bottom: calculateRem(10);
+    font-size: calculateRem(15);
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: top;
+    text-align: left;
+
+    @include breakpoint(desk) {
+      font-size: calculateRem(16);
+      vertical-align: middle;
+    }
+
+    @include breakpoint(desk-big) {
+      font-size: calculateRem(17);
+      vertical-align: top;
+    }
+  }
+}
+
+input[type=checkbox] + div:before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: $color-primary;
+  border: 1px solid $color-white-light;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[type=checkbox]:checked + div:before {
+  content: "\2714";
+  background-color: $color-white-light;
+  color: $color-primary;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 1;
+  font-size: calculateRem(22);
+}
+
+input[type=checkbox]:checked + div:after {
+  font-weight: bold;
+}

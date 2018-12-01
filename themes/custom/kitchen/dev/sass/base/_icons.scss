@@ -1,0 +1,12 @@
+.icon {
+  vertical-align: bottom;
+}
+
+.icon-small {
+  width: calculateRem(18);
+  height: calculateRem(18);
+}
+
+.icon-green {
+  fill: $color-primary;
+}

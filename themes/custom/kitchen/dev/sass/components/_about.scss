@@ -1,0 +1,44 @@
+.about {
+  &__image {
+    @include flex(0, center, center);
+
+    img {
+      width: 55%;
+      border-radius: 50%;
+
+      @include breakpoint(tab-land) {
+        width: 40%;
+      }
+
+      @include breakpoint(desk) {
+        width: 65%;
+      }
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    margin-top: calculateRem(30);
+    padding: 0 calculateRem(40);
+    text-align: center;
+
+    @include breakpoint(desk) {
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+
+  &__signature {
+    float: right;
+    @include clearfix;
+    padding: 0 calculateRem(70);
+    margin-top: calculateRem(45);
+    transform: rotate(-10deg);
+
+    @include breakpoint(desk) {
+      margin-right: calculateRem(80);
+      margin-top: calculateRem(25);
+      padding: 0;
+    }
+  }
+}

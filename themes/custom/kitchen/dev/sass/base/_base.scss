@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 93.75%;  /* 1rem = 15px 15/16 = 93.75% */
+
+  @include breakpoint(tab-land) {
+    font-size: 100%;  /* 1rem = 16px 16/16 = 100% */
+  }
+}
+
+body {
+  font-family: $font-main;
+  font-weight: normal;
+  color: $color-regular-text;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Changes the color of input yellow to white */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+-webkit-box-shadow: 0 0 0 30px rgba($color-white-light, .9) inset;
+}

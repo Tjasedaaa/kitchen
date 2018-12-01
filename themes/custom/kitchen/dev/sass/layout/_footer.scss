@@ -1,0 +1,87 @@
+.footer {
+  background-color: $color-primary;
+  min-height: calculateRem(100);
+  padding: calculateRem(15) 0;
+
+  @include breakpoint(tab-port) {
+    padding: 0;
+    @include flex(0, 0, center);
+  }
+
+  &__nav {
+    @include flex(0, flex-end, center);
+
+    @include breakpoint(tab-port) {
+      @include flex(0, center, center);
+    }
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    display: inline-block;
+    float: right;
+    @include clearfix;
+    text-align: right;
+    margin: 0 calculateRem(5);
+
+    @include breakpoint(tab-port) {
+      float: none;
+      margin: 0;
+      text-align: center;
+    }
+
+    @include breakpoint(tab-land) {
+      margin: 0 calculateRem(10);
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: $color-white-light;
+        text-transform: uppercase;
+        font-size: calculateRem(12);
+        font-weight: 400;
+        position: relative;
+        transition: all .3s;
+
+        @include breakpoint(tab-port) {
+          padding: 0 calculateRem(10);
+        }
+
+        @include breakpoint(tab-land) {
+          font-size: calculateRem(14);
+          padding: 0 calculateRem(10);
+        }
+
+        &.is-active {
+          text-shadow: 0 calculateRem(5) calculateRem(10) rgba($color-black, .3);
+        }
+      }
+
+      &:hover {
+        text-shadow: 0 calculateRem(5) calculateRem(10) rgba($color-black, .3);
+      }
+    }
+  }
+
+  &__copyright {
+    @include flex(0, center, center);
+    color: $color-white-light;
+    font-size: calculateRem(13);
+    border-top: .5px solid $color-white-light;
+
+    @include breakpoint(tab-port) {
+      @include flex(0, flex-end, center);
+      font-size: calculateRem(14);
+      border-top: 0;
+      text-align: right;
+    }
+
+    @include breakpoint(tab-land) {
+      font-size: calculateRem(16);
+    }
+  }
+}

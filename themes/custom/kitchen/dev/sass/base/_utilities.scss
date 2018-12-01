@@ -1,0 +1,20 @@
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-medium { margin-bottom: 3.5rem !important; }
+.u-margin-bottom-big { margin-bottom: 6rem !important; }
+
+.u-margin-top-small { margin-top: 1.5rem !important; }
+.u-margin-top-medium { margin-top: 3.5rem !important; }
+.u-margin-top-big { margin-top: 6rem !important; }
+
+.u-margin-right-xs {margin-right: calculateRem(5) !important;}
+
+.u-margin-small { margin: 1.5rem 0 !important; }
+.u-margin-medium { margin: 3.5rem 0 !important; }
+.u-margin-big { margin: 6rem 0 !important; }
+
+.u-padding-between { padding: calculateRem(50) calculateRem(30) !important; }
+.u-padding-between-medium { padding: calculateRem(60) calculateRem(50) !important; }
+
+.u-padding-xlg-col { padding: 0 15px !important; @include breakpoint(large) { padding: 15px !important; } }
+
+.u-block-center { display: block !important; margin: 0 auto !important;}

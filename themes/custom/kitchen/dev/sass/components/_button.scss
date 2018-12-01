@@ -1,0 +1,45 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: inherit;
+    padding: calculateRem(15) calculateRem(30);
+    border-radius: 4px;
+    display: inline-block;
+    background-color: transparent;
+
+    // Change for the <button> element
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &--out-green {
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    transition: all .2s ease-out;
+
+    &:hover {
+      border: 2px solid $color-primary;
+      background-color: $color-primary;
+      color: $color-white-light;
+    }
+  }
+
+  &--in-green {
+    border: 2px solid $color-primary;
+    background-color: $color-primary;
+    color: $color-white-light;
+    transition: all .2s ease-out;
+
+    &:hover {
+      border: 2px solid $color-primary;
+      background-color: transparent;
+      color: $color-primary;
+    }
+  }
+}

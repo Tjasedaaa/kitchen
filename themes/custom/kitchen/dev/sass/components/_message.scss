@@ -1,0 +1,20 @@
+.message {
+  padding: calculateRem(15);
+  font-size: calculateRem(17);
+  text-align: center;
+
+  &--warning {
+    background-color: $color-secondary;
+    color: $color-white-light;
+  }
+
+  &--status {
+    background-color: $color-primary;
+    color: $color-white-light;
+  }
+
+  &--error {
+    background-color: $color-tertiary;
+    color: $color-white-light;
+  }
+}

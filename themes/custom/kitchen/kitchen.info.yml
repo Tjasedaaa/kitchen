@@ -1,0 +1,17 @@
+name: Kitchen
+type: theme
+description: 'A theme for food blog with recepies'
+core: 8.x
+libraries:
+  - kitchen/global-styling
+  - kitchen/global-scripts
+  - kitchen/fonts
+base theme: stable
+
+regions:
+  header: Header
+  hero: Hero
+  content: Content
+  sidebar_first: 'Sidebar first'
+  subfooter: Sub Footer
+  footer: Footer

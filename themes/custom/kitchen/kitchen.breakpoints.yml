@@ -1,0 +1,42 @@
+kitchen.mobile:
+  label: mobile
+  mediaQuery: 'only screen and (max-width: 600px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+kitchen.tablet_small:
+  label: tablet_small
+  mediaQuery: 'only screen and (min-width: 601px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+kitchen.tablet_big:
+  label: tablet_big
+  mediaQuery: 'only screen and (min-width: 900px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+kitchen.desktop:
+  label: desktop
+  mediaQuery: 'only screen and (min-width: 1200px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+kitchen.desktop_large:
+  label: desktop_large
+  mediaQuery: 'only screen and (min-width: 1500px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x
+kitchen.large:
+  label: large
+  mediaQuery: 'only screen and (min-width: 1800px)'
+  weight: 5
+  multipliers:
+    - 1x
+    - 2x
